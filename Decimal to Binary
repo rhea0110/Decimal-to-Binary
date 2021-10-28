@@ -1,0 +1,36 @@
+// Given a decimal number n, print its binary equivalent.
+
+import java.util.Scanner;
+
+class Result {
+ static void decimalToBinary(int n){
+   int[] binaryNum = new int[32];
+   int i = 0; 
+   while(n > 0)
+   {
+     binaryNum[i++] = n % 2;
+     n = n / 2;
+   }
+   for(int j = i - 1; j >= 0; j--)
+     System.out.print(binaryNum[j]);
+ }
+}
+
+class Main {
+  public static void main(String[] args)
+  {
+    int t;
+    Result o1 = new Result();
+    Scanner sc = new Scanner(System.in);
+    t = Integer.parseInt(sc.nextLine().trim());
+    while (t > 0) {
+        int n;
+        n = sc.nextInt();
+        
+        o1.decimalToBinary(n);
+        System.out.println();
+        
+        t--;
+    }
+  }
+}
